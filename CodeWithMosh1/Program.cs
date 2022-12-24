@@ -107,10 +107,35 @@ namespace CodeWithMosh1
 
             flags[0] = true;
 
-            Console.WriteLine(flags[0]);
-            Console.WriteLine(flags[1]);
+            Console.WriteLine(flags[0]); //output true
+            Console.WriteLine(flags[1]);//output false default
             Console.WriteLine(flags[2]);
 
+            var names = new string[3] {"Dul","Dil","Sena" };
+
+            //Demo Strings
+            var firstName1 = "Dul";
+            String secName = "Dil";
+            string thName = "Sena"; //same declaration
+
+            var name = firstName1 + " "+ secName ;
+            var newname = string.Format("My name is {0} {1}", firstName1, thName);
+
+            string[] names1 = new string[3] { "Ayesh","Nish","chathu"};
+            var resl = string.Join(",", names1);
+            Console.WriteLine(resl);
+
+            //Verbatim character
+            var verb = @"Hi John
+                        Look in to the following paths 
+                        c:\ folder1\images\new";
+            Console.WriteLine(verb);
+
+
+            Int32 ix = 1;
+            int ixx = 2;//these 2 same
+
+                
         }
     }
 }
