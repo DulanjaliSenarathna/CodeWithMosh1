@@ -94,6 +94,23 @@ namespace CodeWithMosh1
             int res =cal.Add(1, 5);
             Console.WriteLine(res);
 
+            //Demo- Arrays
+
+            var numbers = new int[30];  //same to int[] numbers = new int[30]; because compiler identifies type of var as an array
+            numbers[0] = 1;
+
+            Console.WriteLine(numbers[0]);//output 1
+            Console.WriteLine(numbers[1]);//output 0 default
+            Console.WriteLine(numbers[2]);//output 0
+
+            var flags = new bool[3];
+
+            flags[0] = true;
+
+            Console.WriteLine(flags[0]);
+            Console.WriteLine(flags[1]);
+            Console.WriteLine(flags[2]);
+
         }
     }
 }
