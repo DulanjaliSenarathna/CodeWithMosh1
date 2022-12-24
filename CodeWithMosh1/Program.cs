@@ -27,6 +27,7 @@ namespace CodeWithMosh1
             Console.WriteLine("{0} {1}", byte.MaxValue , byte.MinValue);
             Console.WriteLine("{0} {1}", float.MaxValue , float.MinValue);
 
+            //Demo Type Conversion
             byte b = 1;
             int i = b;
             Console.WriteLine(i);
@@ -53,6 +54,21 @@ namespace CodeWithMosh1
             string str = "true";
             bool boo = Convert.ToBoolean(str);
             Console.WriteLine(boo);
+
+            int q = 10;
+            int w = 3;
+            int r = 11;
+
+            Console.WriteLine(q+w);
+            Console.WriteLine(q/w);//reslut int
+            Console.WriteLine((float)q/ (float)w);
+            Console.WriteLine(q+w*r);//operator precedence
+            Console.WriteLine(w>q);
+            Console.WriteLine(w==q);
+            Console.WriteLine(w!=q);
+            Console.WriteLine(!(w!=q)); // ugly, so => put (w==q)
+            Console.WriteLine(r>q && r>w);
+
 
         }
     }
