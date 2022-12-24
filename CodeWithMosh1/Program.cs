@@ -2,7 +2,16 @@
 using CodeWithMosh1.Math;
 
 namespace CodeWithMosh1
-{
+
+{  //Demo- Enums
+    public enum ShippingMethod
+    {
+        RegularAirMail = 1,
+        RegisteredAirMail = 2,
+        Express = 3
+
+
+    }
     class Person
     {
         public string firstName;
@@ -135,7 +144,25 @@ namespace CodeWithMosh1
             Int32 ix = 1;
             int ixx = 2;//these 2 same
 
-                
+            //Demo- Enums
+            var method = ShippingMethod.Express;
+            Console.WriteLine((int)method);
+
+            //when the number is come from another system and, based on that number we can detremine shiipping method
+            var methodId = 3;
+            Console.WriteLine((ShippingMethod)methodId);
+
+            Console.WriteLine(method.ToString());//don't need to add ToString.
+
+
+            //when the string is come from another system and, based on that string we can detremine shiipping method number
+
+            var methName = "Express";
+          var shippingMe =  (ShippingMethod) Enum.Parse(typeof(ShippingMethod), methName);
+            Console.WriteLine(shippingMe);
+
+
+
         }
     }
 }
