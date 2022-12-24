@@ -1,7 +1,18 @@
 ﻿using System;
+using CodeWithMosh1.Math;
 
 namespace CodeWithMosh1
 {
+    class Person
+    {
+        public string firstName;
+        public string lastName;
+
+        public void Introduce()
+        {
+            Console.WriteLine("My name is " + firstName + " " + lastName);
+        }
+    }
     class Program
     {
         static void Main(string[] args)
@@ -55,6 +66,8 @@ namespace CodeWithMosh1
             bool boo = Convert.ToBoolean(str);
             Console.WriteLine(boo);
 
+            //Demo- Operators
+
             int q = 10;
             int w = 3;
             int r = 11;
@@ -68,7 +81,18 @@ namespace CodeWithMosh1
             Console.WriteLine(w!=q);
             Console.WriteLine(!(w!=q)); // ugly, so => put (w==q)
             Console.WriteLine(r>q && r>w);
+            Console.WriteLine(r > q && r == w);
+            Console.WriteLine(r > q || r == w);
+            Console.WriteLine(!(r > q || r == w));
 
+            Person person = new Person();
+            person.firstName = "Dulanjali";
+            person.lastName = "Dilshani";
+            person.Introduce();
+
+            Calculator cal = new Calculator();
+            int res =cal.Add(1, 5);
+            Console.WriteLine(res);
 
         }
     }
