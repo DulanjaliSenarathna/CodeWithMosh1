@@ -154,12 +154,24 @@ namespace CodeWithMosh1
 
             Console.WriteLine(method.ToString());//don't need to add ToString.
 
-
-            //when the string is come from another system and, based on that string we can detremine shiipping method number
-
+            //parse a string in to enum
             var methName = "Express";
-          var shippingMe =  (ShippingMethod) Enum.Parse(typeof(ShippingMethod), methName);
-            Console.WriteLine(shippingMe);
+            var shippingMe =  (ShippingMethod) Enum.Parse(typeof(ShippingMethod), methName); //type of the var is ShippingMethod
+
+            // Demo- Reference Types and Value Types
+            //value type
+            var g = 10;
+            var p = g;
+            p++;
+            Console.WriteLine(string.Format("g: {0} p:{1}", g,p));
+
+            //reference type
+            var array1 = new int[3] { 1, 2, 3 };
+            var array2 = array1;
+            array2[0] = 0;
+
+            Console.WriteLine(string.Format("array1[0] : {0} , array2[0] : {1}", array1[0], array2[0]));
+
 
 
 
