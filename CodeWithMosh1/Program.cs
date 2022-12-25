@@ -9,9 +9,9 @@ namespace CodeWithMosh1
         RegularAirMail = 1,
         RegisteredAirMail = 2,
         Express = 3
-
-
     }
+
+    
     class Person1
     {
         public int Age;
@@ -185,7 +185,46 @@ namespace CodeWithMosh1
             //reference type
             Person1 person1 = new Person1() {Age =20 };
             MakeOld(person1);
-            Console.WriteLine(person1.Age);
+            Console.WriteLine(person1.Age);//output 30 
+
+            //Demo- Conditional Statements
+
+            int hour = 10;
+
+            if(hour>0 && hour<12)
+                Console.WriteLine("It's morning");
+            else if(hour>=12 && hour<18)
+                Console.WriteLine("It's afternoon");
+            else
+                Console.WriteLine("It's evening");
+
+            //conditional operators
+            bool isGoldCustomer = true;
+
+            //float pricee;
+            //if (isGoldCustomer)
+            //    pricee = 19.95f;
+            //else
+            //    pricee = 29.95f;
+
+            float price = (isGoldCustomer) ? 19.95f : 29.95f;
+            Console.WriteLine(price);
+
+            //switch
+            var season = Season.Autumn;
+
+            switch (season)
+            {
+                case Season.Autumn:
+                    Console.WriteLine("It's Autumn");
+                    break;
+                case Season.Summer:
+                    Console.WriteLine("It's Summer");
+                    break;
+                default:
+                    Console.WriteLine("I don't knwo");
+                    break;
+            }
 
         }
         //Reference Types 2
