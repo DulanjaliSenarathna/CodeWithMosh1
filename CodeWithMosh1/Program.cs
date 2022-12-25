@@ -12,10 +12,14 @@ namespace CodeWithMosh1
 
 
     }
+    class Person1
+    {
+        public int Age;
+    }
     class Person
     {
         public string firstName;
-        public string lastName;
+        public string lastName; 
 
         public void Introduce()
         {
@@ -172,9 +176,30 @@ namespace CodeWithMosh1
 
             Console.WriteLine(string.Format("array1[0] : {0} , array2[0] : {1}", array1[0], array2[0]));
 
+            //Reference Types 2
+            //Value type
+            var num = 1;
+            Increment(num);
+            Console.WriteLine(num);//output 1, num not affected by increment
 
-
+            //reference type
+            Person1 person1 = new Person1() {Age =20 };
+            MakeOld(person1);
+            Console.WriteLine(person1.Age);
 
         }
+        //Reference Types 2
+        //value type
+        public static void Increment(int number)
+        {
+            number+=10;
+        }
+
+        public static void MakeOld(Person1 person1)//parameter is person object
+        {
+            person1.Age += 10;
+        }
+
+
     }
 }
