@@ -277,7 +277,34 @@ namespace CodeWithMosh1
                 fs++;
             }
 
+            //Random
+            var random = new Random();
+            for (var nn = 0; nn < 10; nn++)
+                Console.WriteLine(random.Next(1,10));//min = 1 max=10
+
             //
+
+            Console.WriteLine((int)'a');
+            //random pw generation and display string in console.but string is immutable, which means cannot be change after they create. to avoid this, we can store individul characters in an array and convert itto string and display
+            for(var pw=0; pw <=8; pw++)
+            {
+                Console.Write((char)random.Next(97,122)); //another way -> Console.Write((char)('a'+ random.Next(0,26)));
+            }
+            Console.WriteLine();
+            //store char in array
+            char[] buffer = new char[10];
+            for (var pw = 0; pw <10; pw++)
+            {
+                buffer[pw] =((char)random.Next(97, 122)); //another way -> Console.Write((char)('a'+ random.Next(0,26)));
+            }
+
+            //create string based on buffer array
+
+            var password = new string(buffer);
+            Console.WriteLine(password);
+
+
+            Console.WriteLine();
 
             while (true)
             {
@@ -287,12 +314,22 @@ namespace CodeWithMosh1
                 if (String.IsNullOrWhiteSpace(input))
                     break;
                 Console.WriteLine("@Echo:" + input);
+
+                //if (!String.IsNullOrWhiteSpace(input)) //if not this, loop will iterating as previous.but after iterate 1 time it will terminate because of the break.
+                //{
+                //Console.WriteLine("@Echo:" + input);
+                //  continue; //but using continue, our loop not going to out of this block , it will go to line 291 again and continue loop
+                //}
+                //    break;
+
+                
             }
-
-
+           
 
 
         }
+
+      
         //Reference Types 2
         //value type
         public static void Increment(int number)
