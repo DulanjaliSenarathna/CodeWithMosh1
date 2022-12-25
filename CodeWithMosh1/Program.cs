@@ -388,6 +388,23 @@ namespace CodeWithMosh1
             numbersList.Clear();
             Console.WriteLine("Afetr clear Count of list: " + numbersList.Count);
 
+            //DateTime
+            var dateTime = new DateTime(2015, 12, 31);
+            var now = DateTime.Now;//now is a static property
+            Console.WriteLine("Hour: " + now.Hour);
+            Console.WriteLine("Hour: " + now.Minute);
+
+            //add 1 day to now
+            var tomorrow = now.AddDays(1);
+            var yesterday = now.AddDays(-1);
+
+            Console.WriteLine(now.ToLongDateString());
+            Console.WriteLine(now.ToShortDateString());
+            Console.WriteLine(now.ToLongTimeString());
+            Console.WriteLine(now.ToShortTimeString());
+            Console.WriteLine(now.ToString("yy MM dd HH mm"));
+
+
 
             //create string based on buffer array
 
