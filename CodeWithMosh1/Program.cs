@@ -234,16 +234,59 @@ namespace CodeWithMosh1
                 Console.WriteLine(name1[ik]);
             }
 
+            //display even numbers 1-10
+
+            for(var l=1; l<=10; l++)
+            {
+                if(l%2 == 0)
+                {
+                    Console.WriteLine(l);
+                }
+            }
+
+            //reverse order even numbers 1-10
+            for (var l = 10; l >= 1; l--)
+            {
+                if (l % 2 == 0)
+                {
+                    Console.WriteLine(l);
+                }
+            }
+
             foreach (var letter in name1)
             {
                 Console.WriteLine(letter);
             }
 
+            //iterate over array
             int[] numm = new int[3] { 5, 8, 6 };
 
             foreach (var f in numm)
             {
                 Console.WriteLine(f);
+            }
+
+            //while
+            var fs = 0;
+            while (fs <= 10)
+            {
+                if(fs%2 == 0)
+                {
+                    Console.WriteLine(fs);
+                }
+                fs++;
+            }
+
+            //
+
+            while (true)
+            {
+                Console.Write("Enter your name: ");
+                var input = Console.ReadLine();
+
+                if (String.IsNullOrWhiteSpace(input))
+                    break;
+                Console.WriteLine("@Echo:" + input);
             }
 
 
