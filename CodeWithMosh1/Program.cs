@@ -216,7 +216,7 @@ namespace CodeWithMosh1
             switch (season)
             {
                 case Season.Autumn:
-                    Console.WriteLine("It's Autumn");
+                    Console.WriteLine("It's Autumn");//if we want to case Autumn , and Summer , both print statement similar, remove this line and break statement below this
                     break;
                 case Season.Summer:
                     Console.WriteLine("It's Summer");
@@ -225,6 +225,29 @@ namespace CodeWithMosh1
                     Console.WriteLine("I don't knwo");
                     break;
             }
+
+            //forloop
+            var name1 = "Dulanjali";
+            int ik;
+            for ( ik = 0; ik<name1.Length; ik++)
+            {
+                Console.WriteLine(name1[ik]);
+            }
+
+            foreach (var letter in name1)
+            {
+                Console.WriteLine(letter);
+            }
+
+            int[] numm = new int[3] { 5, 8, 6 };
+
+            foreach (var f in numm)
+            {
+                Console.WriteLine(f);
+            }
+
+
+
 
         }
         //Reference Types 2
