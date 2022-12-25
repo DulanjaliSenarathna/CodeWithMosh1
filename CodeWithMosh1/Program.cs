@@ -286,17 +286,67 @@ namespace CodeWithMosh1
 
             Console.WriteLine((int)'a');
             //random pw generation and display string in console.but string is immutable, which means cannot be change after they create. to avoid this, we can store individul characters in an array and convert itto string and display
-            for(var pw=0; pw <=8; pw++)
+            const int passwordLength = 10;
+            for(var pw=0; pw <passwordLength; pw++)
             {
                 Console.Write((char)random.Next(97,122)); //another way -> Console.Write((char)('a'+ random.Next(0,26)));
             }
             Console.WriteLine();
             //store char in array
-            char[] buffer = new char[10];
-            for (var pw = 0; pw <10; pw++)
+            char[] buffer = new char[passwordLength];
+            for (var pw = 0; pw <passwordLength; pw++)
             {
                 buffer[pw] =((char)random.Next(97, 122)); //another way -> Console.Write((char)('a'+ random.Next(0,26)));
             }
+
+            //Demo Arrays
+            int[] numbersw = new[] { 3, 7, 9, 45, 78,8,9 }; //we can use var instead of int[]
+           
+            //Length
+            var lengthofAttay = numbersw.Length;
+            Console.WriteLine(lengthofAttay);
+
+            //IndexOf
+            int index =Array.IndexOf(numbersw, 9);
+            Console.WriteLine(index);
+
+            //Clear method (cleared members set to 0) because default value of int is 0. if boolean , default is false. is strings default is null
+            Array.Clear(numbersw, 0, 3);
+                   
+            Console.WriteLine("Affect of clear method");
+            foreach (var o in numbersw)
+            {
+                Console.WriteLine(o);
+            }
+
+            //Copy() method
+            int[] another = new int[3];
+            //copy 1st 3 numbers from numbersw array to another array
+            Array.Copy(numbersw, another, 3);
+
+            foreach (var t in another)
+            {
+                Console.WriteLine(t);
+            }
+
+            //Sort ()method
+            Array.Sort(numbersw);
+
+            Console.WriteLine("Effect after sort");
+            foreach(var n in numbersw)
+            {
+                Console.WriteLine(n);
+            }
+
+            //Reverse ()method
+            Array.Reverse(numbersw);
+
+            Console.WriteLine("Effect after Reverse");
+            foreach (var n in numbersw)
+            {
+                Console.WriteLine(n);
+            }
+
 
             //create string based on buffer array
 
@@ -324,12 +374,10 @@ namespace CodeWithMosh1
 
                 
             }
-           
-
 
         }
 
-      
+
         //Reference Types 2
         //value type
         public static void Increment(int number)
