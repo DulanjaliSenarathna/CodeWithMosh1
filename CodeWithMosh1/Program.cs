@@ -1,5 +1,6 @@
 ﻿using System;
 using CodeWithMosh1.Math;
+using System.Collections.Generic;
 
 namespace CodeWithMosh1
 
@@ -346,6 +347,46 @@ namespace CodeWithMosh1
             {
                 Console.WriteLine(n);
             }
+
+            // Demo- Lists
+
+            var numbersList = new List<int>() {1,2,3,4,6};
+            numbersList.Add(1);
+            numbersList.AddRange(new int[3] { 5,6,7});
+
+            foreach(var e in numbersList)
+            {
+                Console.WriteLine(e);
+            }
+
+            Console.WriteLine("Index of 1 : " + numbersList.IndexOf(2));
+            Console.WriteLine("Last Index of 6 : " + numbersList.LastIndexOf(6));//search from last
+
+            Console.WriteLine("Count of list: "+ numbersList.Count);
+
+            numbersList.Remove(1);//remove the first 1 you meet from the begining
+            foreach(var z in numbersList)
+            {
+                Console.WriteLine(z);
+            }
+
+            //remove all the 6s from the lsit
+            for (int bs=0; bs< numbersList.Count; bs++)
+            {
+                if (numbersList[bs] == 6)
+                {
+                    numbersList.Remove(numbersList[bs]);
+                }
+            }
+           
+            foreach(var c in numbersList)
+            {
+                Console.WriteLine(c);
+            }
+
+            //clear method
+            numbersList.Clear();
+            Console.WriteLine("Afetr clear Count of list: " + numbersList.Count);
 
 
             //create string based on buffer array
