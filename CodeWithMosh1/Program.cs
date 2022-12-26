@@ -433,6 +433,58 @@ namespace CodeWithMosh1
             //Parse string to timespan.
             Console.WriteLine("Parse : "+ TimeSpan.Parse("01:02:03"));
 
+            //Demo Strings
+            var lastName = "Dulanjali Senarathna ";
+            Console.WriteLine("Trim '{0}'",lastName.Trim());//remove the whitespace at end
+            Console.WriteLine("ToUpper '{0}'", lastName.ToUpper());
+
+            //trim based on white space (using Substring())
+            var index1 = lastName.IndexOf(' ');
+            var firstname = lastName.Substring(0, index1);//0= starting index, index1=ending index (2nd overloading of substring method)
+            var secname = lastName.Substring(index1 + 1);//first overloading of substring method(use only starting index)
+            Console.WriteLine("First name:"+ firstname);
+            Console.WriteLine("Second name :"+secname);
+
+            //trim based on white space (using Split())
+
+            var names2 = lastName.Split(' ');//return string array and one name is a one element
+            Console.WriteLine("First name:"+ names2[0] );
+            Console.WriteLine("Second name:" + names2[1]);
+
+            //Replace()
+            //replace string
+            lastName.Replace('u', 'U');//all these methods returns new string. original string does not affected
+            Console.WriteLine(lastName.Replace("Dulanjali", "Dilshani"));
+
+            //IsNullOrEmpty()
+            if (String.IsNullOrEmpty(null))
+            {
+                Console.WriteLine("Invalid");
+            }else if(String.IsNullOrEmpty(""))
+            {
+                Console.WriteLine("Also invalid");
+            }else if(String.IsNullOrEmpty(" ".Trim()))//without .Trim() " " not considered as a invalid.but this is ugly. then miscrosoft introduce new method called, IsNullOrWitespace()
+            {
+                    Console.WriteLine("Also invalid");
+                }
+            else if(String.IsNullOrWhiteSpace(" "))
+            {
+                Console.WriteLine("Also invalid");
+            }
+
+            //convert string to number
+            var inputz = "1234";
+            Console.WriteLine(Convert.ToInt32(inputz));
+
+            //convert number to string
+            var inputInt = 29.5f;
+            Console.WriteLine(inputInt.ToString("C"));//C = currency
+            Console.WriteLine(inputInt.ToString("C0"));
+
+
+
+
+
 
 
 
