@@ -1,6 +1,7 @@
 ﻿using System;
 using CodeWithMosh1.Math;
 using System.Collections.Generic;
+using System.Text;
 
 namespace CodeWithMosh1
 
@@ -484,7 +485,23 @@ namespace CodeWithMosh1
             //Summarizing Text
             var sentence = "This is goin to be really really really really really long text...";
             Console.WriteLine(StringUtility.SummerizeText(sentence, 30));
-            
+
+            //Demo- StringBuilder
+            var stringBuilder = new StringBuilder("hello world");//parameter is starting string
+            //Append
+            stringBuilder.Append('-', 10);//output -> ----------(10 dashes)
+            stringBuilder.AppendLine();//line break
+            stringBuilder.Append("Header");
+            stringBuilder.AppendLine();//line break
+            stringBuilder.Append('-', 10);//output -> ----------(10 dashes)
+            stringBuilder.Replace('-', '+');
+            stringBuilder.Remove(0, 10);//remove starting 0 from index 10 -> first line removed
+            stringBuilder.Insert(0, new string('-', 10));// insert new string with 10 dashes (-) to index 0
+            Console.WriteLine(stringBuilder);
+
+            //get char at given index
+            Console.WriteLine("First Char: "+stringBuilder[0]);
+
 
             //create string based on buffer array
 
