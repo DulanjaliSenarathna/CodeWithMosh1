@@ -479,15 +479,12 @@ namespace CodeWithMosh1
             //convert number to string
             var inputInt = 29.5f;
             Console.WriteLine(inputInt.ToString("C"));//C = currency
-            Console.WriteLine(inputInt.ToString("C0"));
+            Console.WriteLine(inputInt.ToString("C0"));//remove decimal and roundup
 
-
-
-
-
-
-
-
+            //Summarizing Text
+            var sentence = "This is goin to be really really really really really long text...";
+            Console.WriteLine(StringUtility.SummerizeText(sentence, 30));
+            
 
             //create string based on buffer array
 
