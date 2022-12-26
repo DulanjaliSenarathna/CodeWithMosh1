@@ -394,6 +394,7 @@ namespace CodeWithMosh1
             Console.WriteLine("Hour: " + now.Hour);
             Console.WriteLine("Hour: " + now.Minute);
 
+            //DateTime is immutable. So we need to specific way to modify it
             //add 1 day to now
             var tomorrow = now.AddDays(1);
             var yesterday = now.AddDays(-1);
@@ -403,6 +404,36 @@ namespace CodeWithMosh1
             Console.WriteLine(now.ToLongTimeString());
             Console.WriteLine(now.ToShortTimeString());
             Console.WriteLine(now.ToString("yy MM dd HH mm"));
+
+            //TimeSpan
+
+            //creating
+            var timespan = new TimeSpan(1, 2, 0);
+
+            var timespan1 = new TimeSpan(1, 2, 0);
+            var timespan2 = TimeSpan.FromHours(1);
+
+            var noww = DateTime.Now;
+            var after = DateTime.Now.AddMinutes(2);
+            var duration = after - noww;
+            Console.WriteLine("Duration"+duration);
+
+            //Properties
+            Console.WriteLine("Minutes: "+timespan.Minutes);
+            Console.WriteLine("Total Minutes"+timespan.TotalMinutes);
+
+            //Timespan is immutable. So we need to specific way to modify it
+            //Add
+            Console.WriteLine(timespan.Add(TimeSpan.FromMinutes(8)));
+            Console.WriteLine(timespan.Subtract(TimeSpan.FromMinutes(5)));
+
+            //ToString
+            Console.WriteLine("ToString : "+ timespan.ToString());
+
+            //Parse string to timespan.
+            Console.WriteLine("Parse : "+ TimeSpan.Parse("01:02:03"));
+
+
 
 
 
