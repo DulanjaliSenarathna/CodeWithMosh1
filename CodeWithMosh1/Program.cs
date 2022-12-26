@@ -575,7 +575,20 @@ namespace CodeWithMosh1
             directoryInfo.GetFiles();
             directoryInfo.GetDirectories("*.",SearchOption.AllDirectories);
 
-            
+            //Path
+            var path1 = @"C:\Users\Dulanjali\Desktop\Code with Mosh\new.sln";
+            //extract extension without using path class
+
+           var dotIndex = path1.IndexOf('.');
+            var extension = path1.Substring(dotIndex);
+            Console.WriteLine(extension);
+
+            //with Path class
+            Console.WriteLine("Extension :"+ Path.GetExtension(path1));
+            Console.WriteLine("Filename :"+ Path.GetFileName(path1));
+            Console.WriteLine("File name without extension: "+ Path.GetFileNameWithoutExtension(path1));
+            Console.WriteLine("Get derectory name :"+Path.GetDirectoryName(path));
+
 
             //create string based on buffer array
 
