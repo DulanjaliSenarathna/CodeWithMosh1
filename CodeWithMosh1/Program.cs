@@ -489,18 +489,26 @@ namespace CodeWithMosh1
             //Demo- StringBuilder
             var stringBuilder = new StringBuilder("hello world");//parameter is starting string
             //Append
-            stringBuilder.Append('-', 10);//output -> ----------(10 dashes)
-            stringBuilder.AppendLine();//line break
-            stringBuilder.Append("Header");
-            stringBuilder.AppendLine();//line break
-            stringBuilder.Append('-', 10);//output -> ----------(10 dashes)
-            stringBuilder.Replace('-', '+');
-            stringBuilder.Remove(0, 10);//remove starting 0 from index 10 -> first line removed
-            stringBuilder.Insert(0, new string('-', 10));// insert new string with 10 dashes (-) to index 0
+            stringBuilder
+                .Append('-', 10)//output -> ----------(10 dashes) , Append method returns StringBilder. It means Append method is not a void. So we can chain our Append methods all together
+                .AppendLine()//line break
+                .Append("Header")
+                .AppendLine()//line break
+                .Append('-', 10)//output -> ----------(10 dashes)
+                .Replace('-', '+')// Replace method also returns StringBilder, so it also can chain to append method
+                .Remove(0, 10)//remove starting 0 from index 10 -> first line removed. // Remove method also returns StringBilder, so it also can chain to replace method
+                .Insert(0, new string('-', 10));// insert new string with 10 dashes (-) to index 0 , // Insert method also returns StringBilder, so it also can chain to remove method
             Console.WriteLine(stringBuilder);
 
             //get char at given index
             Console.WriteLine("First Char: "+stringBuilder[0]);
+
+            // Exercice , get input name from user and reverse name
+            Console.Write("What is your name? ");
+            var nameUSer = Console.ReadLine();
+            var reversed = ReverseName("Dulanjali");
+            
+            Console.WriteLine("Reveresd : "+reversed);
 
 
             //create string based on buffer array
@@ -530,6 +538,17 @@ namespace CodeWithMosh1
                 
             }
 
+        }
+
+        public static string ReverseName(string nameUSer)
+        {
+            var array3 = new char[nameUSer.Length];
+            for (var gl = nameUSer.Length; gl > 0; gl--)
+            {
+                array3[nameUSer.Length - gl] = nameUSer[gl - 1];
+            }
+            var reversed = new string(array3);//store array in string
+            return reversed;
         }
 
 
