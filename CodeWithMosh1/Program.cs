@@ -2,6 +2,7 @@
 using CodeWithMosh1.Math;
 using System.Collections.Generic;
 using System.Text;
+using System.IO;
 
 namespace CodeWithMosh1
 
@@ -506,16 +507,58 @@ namespace CodeWithMosh1
             // Exercice , get input name from user and reverse name
             Console.Write("What is your name? ");
             var nameUSer = Console.ReadLine();
-            var reversed = ReverseName("Dulanjali");
-            
+            var reversed = ReverseName(nameUSer);//ReverseName() method is in outside of the main method
+
             Console.WriteLine("Reveresd : "+reversed);
+
+            //get user input as numbers continously until user input quit, and display unique numbers to console
+
+            var numbers2 = new List<int>();
+            while (true)
+            {
+                Console.WriteLine("Enter a number :");
+                var input = Console.ReadLine();
+
+                if (input.ToLower() == "quit")
+                    break;
+                numbers2.Add(Convert.ToInt32(input));
+            }
+
+            var uniques = GetUniqueNumbers(numbers2);
+           
+            Console.WriteLine("Unique numbers: ");
+            foreach(var j in uniques)
+            {
+                Console.WriteLine(j);
+            }
+
+            // File and FileInfo
+
+            var path = @"c:\somefile.jpg";
+            File.Copy(@"c:\temp\myfile.jpg", @"d:\temp\mydoc.jpg", true); //parameter 1 = copy from , parameter 2 = copy to, parameter 3 optional - if true = overwrite file
+            File.Delete(path);
+            if (File.Exists(path))
+            {
+                //do somthing
+            }
+
+            var content = File.ReadAllText(path);//return string
+
+            //FileInfo class's methods
+            var fileInfo = new FileInfo(path);
+            fileInfo.CopyTo("path", true); //parameter 2 = copy to, parameter 3 optional - if true = overwrite file
+            fileInfo.Delete();
+            if (fileInfo.Exists) //in here , Exists is a property, not a method
+            {
+                //do somthing
+            }
 
 
             //create string based on buffer array
 
             var password = new string(buffer);
             Console.WriteLine(password);
-
+            
 
             Console.WriteLine();
 
@@ -540,6 +583,19 @@ namespace CodeWithMosh1
 
         }
 
+        public static List<int> GetUniqueNumbers(List <int> numbers2) //return type is List<int> and parameter is List<int>
+        {
+            var uniques = new List<int>();
+            foreach (var d in numbers2)
+            {
+                if (!uniques.Contains(d))
+                {
+                    uniques.Add(d);
+                }
+            }
+            return uniques;
+        }
+
         public static string ReverseName(string nameUSer)
         {
             var array3 = new char[nameUSer.Length];
@@ -547,8 +603,8 @@ namespace CodeWithMosh1
             {
                 array3[nameUSer.Length - gl] = nameUSer[gl - 1];
             }
-            var reversed = new string(array3);//store array in string
-            return reversed;
+            return new string(array3);//store array in string
+            
         }
 
 
