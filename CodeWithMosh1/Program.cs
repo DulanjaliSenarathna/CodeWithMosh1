@@ -553,6 +553,29 @@ namespace CodeWithMosh1
                 //do somthing
             }
 
+            //Directory and DirectoryInfo
+
+            Directory.CreateDirectory(@"c\temp\folder");
+          var files =  Directory.GetFiles(@"C:\Users\Dulanjali\Desktop\Code with Mosh", "*.", SearchOption.AllDirectories);//* = all files extension. this returns a string array
+            foreach(var file in files)
+            {
+                Console.WriteLine(file);
+            }
+
+            var directories = Directory.GetDirectories(@"C:\Users\Dulanjali\Desktop\Code with Mosh","*.",SearchOption.AllDirectories); //this returns a string array
+            foreach(var directory in directories)
+            {
+                Console.WriteLine(directory);
+            }
+
+            Directory.Exists(@"C:\Users\Dulanjali\Desktop\Code with Mosh");
+
+            //FileInfo class's methods
+            var directoryInfo = new DirectoryInfo(@"C:\Users\Dulanjali\Desktop\Code with Mosh");
+            directoryInfo.GetFiles();
+            directoryInfo.GetDirectories("*.",SearchOption.AllDirectories);
+
+            
 
             //create string based on buffer array
 
